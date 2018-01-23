@@ -39,20 +39,7 @@ module.exports = function (grunt) {
 			}
 		},
 
-		jquery: {},
-
-		testcafe: {
-			test: {
-				options: {
-					files:    ['test/e2e/index.js'],
-					browsers: ['chrome'],
-					startApp: {
-						command: 'npm run http-server'
-					},
-					skipJsErrors: true //https://github.com/RubaXa/Sortable/issues/1041
-				}
-			}
-		}
+		jquery: {}
 	});
 
 
@@ -95,9 +82,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-version');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-testcafe');
 
 	grunt.registerTask('tests', ['jshint']);
-	grunt.registerTask('build', ['version', 'uglify:dist']);
-	grunt.registerTask('default', ['tests', 'build', 'testcafe']);
+	grunt.registerTask('default', ['tests', 'version', 'uglify:dist']);
 };
