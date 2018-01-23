@@ -1038,9 +1038,9 @@
 			activeGroup =
 			Sortable.active = null;
 
-			savedInputChecked.forEach(function (el) {
-				el.checked = true;
-			});
+			// savedInputChecked.forEach(function (el) {
+				// el.checked = true;
+			// });
 			savedInputChecked.length = 0;
 		},
 
